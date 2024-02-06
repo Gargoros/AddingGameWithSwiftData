@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C509E582B72A3FD007AFF33 /* HighScoreEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509E572B72A3FD007AFF33 /* HighScoreEntity.swift */; };
 		8C62658B2B716F230026F93F /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C62658A2B716F230026F93F /* BackgroundView.swift */; };
 		8C62658D2B716FE50026F93F /* GameBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C62658C2B716FE50026F93F /* GameBackgroundView.swift */; };
 		8C62658F2B7170C20026F93F /* HighScoreBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C62658E2B7170C10026F93F /* HighScoreBackgroundView.swift */; };
@@ -24,8 +25,6 @@
 		8C7320442B70BDF600A77A8E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C7320432B70BDF600A77A8E /* Preview Assets.xcassets */; };
 		8C7320562B70C3BD00A77A8E /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7320552B70C3BD00A77A8E /* ImageConstants.swift */; };
 		8C73205B2B70C71E00A77A8E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C73205D2B70C71E00A77A8E /* Localizable.strings */; };
-		8C7320672B70D61700A77A8E /* HighScoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C7320652B70D61700A77A8E /* HighScoreDataModel.xcdatamodeld */; };
-		8C7320692B70D6AC00A77A8E /* HighScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7320682B70D6AC00A77A8E /* HighScoreViewModel.swift */; };
 		8C73206B2B70DCCC00A77A8E /* ProblemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C73206A2B70DCCC00A77A8E /* ProblemModel.swift */; };
 		8C73206D2B70E19200A77A8E /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C73206C2B70E19200A77A8E /* GameModel.swift */; };
 		8C73206F2B70F77B00A77A8E /* AdditionGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C73206E2B70F77B00A77A8E /* AdditionGameViewModel.swift */; };
@@ -37,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C509E572B72A3FD007AFF33 /* HighScoreEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreEntity.swift; sourceTree = "<group>"; };
 		8C62658A2B716F230026F93F /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		8C62658C2B716FE50026F93F /* GameBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBackgroundView.swift; sourceTree = "<group>"; };
 		8C62658E2B7170C10026F93F /* HighScoreBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreBackgroundView.swift; sourceTree = "<group>"; };
@@ -61,8 +61,6 @@
 		8C7320602B70C72C00A77A8E /* ja-JP */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ja-JP"; path = "ja-JP.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		8C7320612B70C72D00A77A8E /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8C7320622B70C72F00A77A8E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		8C7320662B70D61700A77A8E /* HighScoresDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HighScoresDataModel.xcdatamodel; sourceTree = "<group>"; };
-		8C7320682B70D6AC00A77A8E /* HighScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreViewModel.swift; sourceTree = "<group>"; };
 		8C73206A2B70DCCC00A77A8E /* ProblemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemModel.swift; sourceTree = "<group>"; };
 		8C73206C2B70E19200A77A8E /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		8C73206E2B70F77B00A77A8E /* AdditionGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionGameViewModel.swift; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 		8C73204F2B70C0D900A77A8E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				8C7320682B70D6AC00A77A8E /* HighScoreViewModel.swift */,
 				8C73206E2B70F77B00A77A8E /* AdditionGameViewModel.swift */,
 			);
 			path = ViewModel;
@@ -205,9 +202,9 @@
 		8C7320502B70C0DF00A77A8E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8C7320652B70D61700A77A8E /* HighScoreDataModel.xcdatamodeld */,
 				8C73206A2B70DCCC00A77A8E /* ProblemModel.swift */,
 				8C73206C2B70E19200A77A8E /* GameModel.swift */,
+				8C509E572B72A3FD007AFF33 /* HighScoreEntity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -340,7 +337,6 @@
 				8C73206B2B70DCCC00A77A8E /* ProblemModel.swift in Sources */,
 				8C62658F2B7170C20026F93F /* HighScoreBackgroundView.swift in Sources */,
 				8C6265962B7172EC0026F93F /* ScoreLivesLevelView.swift in Sources */,
-				8C7320672B70D61700A77A8E /* HighScoreDataModel.xcdatamodeld in Sources */,
 				8C7320562B70C3BD00A77A8E /* ImageConstants.swift in Sources */,
 				8C6265982B7174740026F93F /* TitleValueView.swift in Sources */,
 				8C6265A02B71FE230026F93F /* GameOverView.swift in Sources */,
@@ -351,7 +347,7 @@
 				8C73206F2B70F77B00A77A8E /* AdditionGameViewModel.swift in Sources */,
 				8CD3BF772B72250900745A9D /* VTextImageView.swift in Sources */,
 				8C73206D2B70E19200A77A8E /* GameModel.swift in Sources */,
-				8C7320692B70D6AC00A77A8E /* HighScoreViewModel.swift in Sources */,
+				8C509E582B72A3FD007AFF33 /* HighScoreEntity.swift in Sources */,
 				8CD3BF752B72241A00745A9D /* HighScoreTitle.swift in Sources */,
 				8C62658D2B716FE50026F93F /* GameBackgroundView.swift in Sources */,
 				8CD3BF732B72126700745A9D /* EnterNewHighScoreView.swift in Sources */,
@@ -589,19 +585,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		8C7320652B70D61700A77A8E /* HighScoreDataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				8C7320662B70D61700A77A8E /* HighScoresDataModel.xcdatamodel */,
-			);
-			currentVersion = 8C7320662B70D61700A77A8E /* HighScoresDataModel.xcdatamodel */;
-			path = HighScoreDataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 8C7320302B70BDF200A77A8E /* Project object */;
 }

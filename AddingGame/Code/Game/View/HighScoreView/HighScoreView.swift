@@ -6,15 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HighScoreView: View {
     //MARK: - Variables
-    @Environment(HighScoreViewModel.self) private var highScoreViewModel
+    
+    @Query (sort: [SortDescriptor(\HighScoreEntity.score, order: .reverse)])
+    private var highScores: Array<HighScoreEntity>
+    @Environment(\.modelContext) var modelContext
     
     let dim: Double = 100.0
+    
+    
     var highScoreList: Array<(offset: Int, element: HighScoreEntity)>{
-        return Array(highScoreViewModel.highScores.enumerated())
+        return Array(highScores.enumerated())
     }
+    
     
     //MARK: - Views
     var body: some View {
@@ -24,14 +31,14 @@ struct HighScoreView: View {
                 HighScoreTitle()
                 
                 List{
-                    ForEach(Array(highScoreViewModel.highScores.enumerated()), id: \.offset){index, entity in
+                    ForEach(highScoreList, id: \.offset){index, entity in
                         
                         RankScoreView(
                             rank: index + 1,
                             score: Int(entity.score),
                             entity: entity)
                     }
-                    .onDelete(perform: highScoreViewModel.deleteScore)
+                    .onDelete(perform: deleteScore)
                     .listRowBackground(Color.black.opacity(0.4))
                     .padding()
                 }
@@ -44,9 +51,15 @@ struct HighScoreView: View {
             }
         }
     }
+    
+    func deleteScore(indexSet: IndexSet) {
+        for index in indexSet {
+            modelContext.delete(highScores[index])
+        }
+    }
 }
 
 #Preview {
     HighScoreView()
-        .environment(HighScoreViewModel())
+        .modelContainer(for: HighScoreEntity.self)
 }

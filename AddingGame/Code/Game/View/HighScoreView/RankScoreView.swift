@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct RankScoreView: View {
     //MARK: - Variables
@@ -20,7 +21,9 @@ struct RankScoreView: View {
     }
     
     @State private var editMode: Bool = false
-    @Environment(HighScoreViewModel.self) private var highScoreViewModel
+    @Query (sort: [SortDescriptor(\HighScoreEntity.score, order: .reverse)])
+    private var highScores: Array<HighScoreEntity>
+    @Environment(\.modelContext) var modelContext
     
     @State private var playerName: String = ""
     @State private var save: Bool = false
@@ -30,7 +33,7 @@ struct RankScoreView: View {
         VStack(){
             if editMode {
                 HStack(){
-                    TextField(entity.name ?? "Name", text: $playerName)
+                    TextField(entity.name , text: $playerName)
                         .fontWeight(.semibold)
                         .foregroundStyle(.black)
                         .padding()
@@ -39,7 +42,8 @@ struct RankScoreView: View {
                     
                     Button(
                         action: {
-                            highScoreViewModel.updateHighScoreName(entity: entity, name: playerName.isEmpty ? (entity.name ?? "Anon") : playerName)
+                            update(entity: entity, playerName: playerName)
+                            
                             withAnimation(){
                                 editMode.toggle()
                             }
@@ -59,7 +63,7 @@ struct RankScoreView: View {
                         .frame(maxWidth: .infinity)
                     Text("\(score)")
                         .frame(maxWidth: .infinity)
-                    Text(entity.name?.uppercased() ?? "")
+                    Text(entity.name.uppercased() )
                         .frame(maxWidth: .infinity)
                 }
                 .font(.headline)
@@ -73,12 +77,22 @@ struct RankScoreView: View {
             }
         }
     }
+    
+    func update(entity: HighScoreEntity, playerName: String){
+        entity.name = playerName.isEmpty ? (entity.name ) : playerName
+        
+        do{
+            try modelContext.save()
+        }catch{
+            print("Update/Save failure")
+        }
+    }
 }
 
 #Preview {
     RankScoreView(
         rank: 2,
         score: 123,
-        entity: HighScoreViewModel().highScores[0])
-    .environment(HighScoreViewModel())
+        entity: HighScoreEntity.init(name: "Same", score: 123))
+    .modelContainer(for: HighScoreEntity.self)
 }

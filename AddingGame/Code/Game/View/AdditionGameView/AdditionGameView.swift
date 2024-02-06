@@ -6,23 +6,35 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AdditionGameView: View {
     //MARK: - Variables
     private var gameViewModel: AdditionGameViewModel = AdditionGameViewModel()
-    @Environment(HighScoreViewModel.self) private var highScoreViewModel
+    @Query (sort: [SortDescriptor(\HighScoreEntity.score, order: .reverse)])
+    private var highScores: Array<HighScoreEntity>
     @State private var highScoreViewIsPresented: Bool = false
     @State private var playerName: String = ""
     
+    let maxNumberOfHighScore: Int = 10
+    
+    var minHighScore: Int? {
+        if highScores.isEmpty{
+            return nil
+        } 
+        else{
+            return highScores.last?.score
+        }
+    }
+    
     
     var showHighScore: Bool{
-        gameViewModel.gameOver && highScoreViewModel
-            .isNewHighScore(score: gameViewModel.score)
+        gameViewModel.gameOver && isNewHighScore(score: gameViewModel.score)
     }
-    //TODO: Update this once we add the high score view model
     var showGameOverView: Bool {
         gameViewModel.gameOver
     }
+    
     //MARK: - Views
     var body: some View {
         ZStack(){
@@ -74,9 +86,20 @@ struct AdditionGameView: View {
                 highScoreViewIsPresented = showHighScore
             }
     }
+    
+    func isNewHighScore(score: Int) -> Bool{
+        if score <= 0 {
+            return false
+        }else if let minHighScore{
+            return minHighScore < score || highScores.count <= maxNumberOfHighScore
+        }
+        else {
+            return true
+        }
+    }
 }
 
 #Preview {
     AdditionGameView()
-        .environment(HighScoreViewModel())
+        .modelContainer(for: HighScoreEntity.self)
 }

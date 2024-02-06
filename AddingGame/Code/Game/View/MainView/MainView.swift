@@ -28,5 +28,5 @@ struct MainView: View {
 
 #Preview {
     MainView()
-        .environment(HighScoreViewModel())
+        .modelContainer(for: HighScoreEntity.self)
 }

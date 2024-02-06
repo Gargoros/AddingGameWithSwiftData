@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct EnterNewHighScoreView: View {
     //MARK: - Variables
     let score: Int
     @Binding var playerName: String
     @Binding var isPresented: Bool
-    @Environment(HighScoreViewModel.self) private var highScoreViewModel
+    @Environment(\.modelContext) var modelContext
+    
     //MARK: - Views
     var body: some View {
         ZStack(){
@@ -36,11 +38,7 @@ struct EnterNewHighScoreView: View {
                 
                 Button(
                     action: {
-                        playerName = playerName.isEmpty ? "Anon" : playerName
-                        highScoreViewModel.addHighScore(
-                            name: playerName,
-                            score: Int64(score)
-                        )
+                        addHighScore()
                         isPresented = false
                     },
                     label: {
@@ -59,6 +57,11 @@ struct EnterNewHighScoreView: View {
            
         }
     }
+    
+    func addHighScore(){
+        playerName = playerName.isEmpty ? "Anon" : playerName
+        modelContext.insert(HighScoreEntity(name: playerName, score: score))
+    }
 }
 
 #Preview {
@@ -67,5 +70,5 @@ struct EnterNewHighScoreView: View {
         playerName: .constant("Sam"),
         isPresented: .constant(true)
     )
-    .environment(HighScoreViewModel())
+    .modelContainer(for: HighScoreEntity.self)
 }
