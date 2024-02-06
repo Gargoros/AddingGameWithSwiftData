@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  AddingGame
+
+  Created by MIKHAIL ZHACHKO on 5.02.24.
+  
+*/
+
+"Game Over"       = "GKoniec Gry";
+"Score"           = "Wynik";
+"Level"           = "Poziom";
+"High Score"      = "Wysoki Wynik";
+"Rank"            = "Ranga";
+"Name"            = "Nazwa";
+"Game"            = "Gra";
+"Save"            = "Zapisz";
+"New High Score"  = "Nowy Wysoki Wynik";
+"Enter Your Name" = "Wpisz Swoje Imię";
+"Anon"            = "Anon";
+"Your score: "    = "Twój wynik: ";
+ 

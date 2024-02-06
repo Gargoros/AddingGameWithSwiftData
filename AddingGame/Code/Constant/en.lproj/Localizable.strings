@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  AddingGame
+
+  Created by MIKHAIL ZHACHKO on 5.02.24.
+  
+*/
+
+"Game Over"       = "Game Over";
+"Score"           = "Score";
+"Level"           = "Level";
+"High Score"      = "High Score";
+"Rank"            = "Rank";
+"Name"            = "Name";
+"Game"            = "Game";
+"Save"            = "Save";
+"New High Score"  = "New High Score";
+"Enter Your Name" = "Enter Your Name";
+"Anon"            = "Anon";
+"Your score: "     = "You score: ";

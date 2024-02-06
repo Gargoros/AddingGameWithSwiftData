@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  AddingGame
+
+  Created by MIKHAIL ZHACHKO on 5.02.24.
+  
+*/
+
+"Game Over"       = "ゲームオーバー";
+"Score"           = "スコア";
+"Level"           = "レベル";
+"High Score"      = "ハイスコア";
+"Rank"            = "ランク";
+"Name"            = "名前";
+"Game"            = "ゲーム";
+"Save"            = "保存";
+"New High Score"  = "新しいハイスコア";
+"Enter Your Name" = "あなたの名前を入力";
+"Anon"            = "アノン";
+"Your score: "    = "あなたのスコア：";
+ 
