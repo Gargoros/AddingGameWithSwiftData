@@ -23,7 +23,6 @@
 		8C7320402B70BDF600A77A8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C73203F2B70BDF600A77A8E /* Assets.xcassets */; };
 		8C7320442B70BDF600A77A8E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C7320432B70BDF600A77A8E /* Preview Assets.xcassets */; };
 		8C7320562B70C3BD00A77A8E /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7320552B70C3BD00A77A8E /* ImageConstants.swift */; };
-		8C7320582B70C54400A77A8E /* TestLocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7320572B70C54400A77A8E /* TestLocol.swift */; };
 		8C73205B2B70C71E00A77A8E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C73205D2B70C71E00A77A8E /* Localizable.strings */; };
 		8C7320672B70D61700A77A8E /* HighScoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C7320652B70D61700A77A8E /* HighScoreDataModel.xcdatamodeld */; };
 		8C7320692B70D6AC00A77A8E /* HighScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7320682B70D6AC00A77A8E /* HighScoreViewModel.swift */; };
@@ -56,7 +55,6 @@
 		8C7320412B70BDF600A77A8E /* AddingGame.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AddingGame.entitlements; sourceTree = "<group>"; };
 		8C7320432B70BDF600A77A8E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8C7320552B70C3BD00A77A8E /* ImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConstants.swift; sourceTree = "<group>"; };
-		8C7320572B70C54400A77A8E /* TestLocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLocol.swift; sourceTree = "<group>"; };
 		8C73205C2B70C71E00A77A8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8C73205E2B70C72A00A77A8E /* be-BY */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "be-BY"; path = "be-BY.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		8C73205F2B70C72B00A77A8E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 				8C6265882B716EF50026F93F /* ComponentsView */,
 				8C7320542B70C11900A77A8E /* HighScoreView */,
 				8C7320532B70C10B00A77A8E /* AdditionGameView */,
-				8C7320572B70C54400A77A8E /* TestLocol.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -354,7 +351,6 @@
 				8C73206F2B70F77B00A77A8E /* AdditionGameViewModel.swift in Sources */,
 				8CD3BF772B72250900745A9D /* VTextImageView.swift in Sources */,
 				8C73206D2B70E19200A77A8E /* GameModel.swift in Sources */,
-				8C7320582B70C54400A77A8E /* TestLocol.swift in Sources */,
 				8C7320692B70D6AC00A77A8E /* HighScoreViewModel.swift in Sources */,
 				8CD3BF752B72241A00745A9D /* HighScoreTitle.swift in Sources */,
 				8C62658D2B716FE50026F93F /* GameBackgroundView.swift in Sources */,
